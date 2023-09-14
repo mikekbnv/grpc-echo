@@ -1,0 +1,22 @@
+syntax = "proto3";
+package echo;
+
+option go_package = "github.com/mikekbnv/gRPC-echo;echo";
+
+//The echo service definition.
+service Echo {
+    // Echoes the user's message.
+    rpc Echo (Msg) returns (Reply) {}
+    
+}
+  
+// The request message containing the text to echo.
+message Msg {
+    string text = 1;
+}
+
+// The response message containing the echoed text.
+message Reply {
+    string message = 1;
+}
+  
