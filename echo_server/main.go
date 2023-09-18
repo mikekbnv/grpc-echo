@@ -42,6 +42,7 @@ func main() {
 	// Instantiate the server
 	s := grpc.NewServer()
 	reflection.Register(s)
+	echo.RegisterEchoServer(s, &EchoServer{})
 	// Register server method (actions the server will do)
 	// TODO
 
